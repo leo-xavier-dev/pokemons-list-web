@@ -42,13 +42,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this._activateRoute.paramMap.subscribe(params => {
       this.openSideBarById = params.get('id');
-      // Aqui você pode fazer uma nova pesquisa com base no ID obtido
-      // Exemplo: this.getPokemonDetails(this.id);
     });
   }
 
   onScroll(event: any) {
-    // console.log('evento:', event);
+    
   }
 
 }

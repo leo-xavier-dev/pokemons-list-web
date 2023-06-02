@@ -122,7 +122,7 @@ export class PokedexComponent implements OnInit {
     if (window.scrollY >= window.innerHeight) {
       this.count = this.count + 20;
       this.page = this.page + 20;
-      if (this.count <= 60) {
+      if (this.count <= 500) {
         this.initPokemonCount();
       }
     }
