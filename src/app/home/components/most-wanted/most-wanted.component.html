@@ -1,0 +1,31 @@
+<div class="c-header">
+    <h5>
+        Mais procurados
+    </h5>
+</div>
+
+<p-carousel 
+    *ngIf="pokemonsList.length > 10"
+    [value]="pokemonsList"
+    [numVisible]="6"
+    [numScroll]="1"
+    [circular]="false"
+    [responsiveOptions]="responsiveOptions"
+>
+    <ng-template pTemplate="header">
+        
+    </ng-template>
+    <ng-template let-pokemon pTemplate="item">
+        <div class="product-item">
+            <div class="product-item-content">
+                <div>
+                    <app-card-pokemon [pokemon]="pokemon" (open)="openSideBar($event)"></app-card-pokemon>
+                </div>                
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>
+
+<p-sidebar [(visible)]="display" position="right" [baseZIndex]="10000">    
+    <app-sidebar *ngIf="display" [pokemonId]="pokemonId"></app-sidebar>
+</p-sidebar>

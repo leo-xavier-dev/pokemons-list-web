@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {  Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pokemons-list-web';
+
+  
 }

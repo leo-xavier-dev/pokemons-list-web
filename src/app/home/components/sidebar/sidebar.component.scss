@@ -1,0 +1,62 @@
+.details {
+  color: #233674;
+
+  h2 {
+    font-weight: 100;
+  }
+
+  .type {
+    .normal {
+      display: inline;
+      padding: 5px;
+    }
+    span {
+      // color: white;
+      padding: 5px 10px;
+      &.fire {
+        background-color: #f7802a;
+      }
+      &.water {
+        background-color: #f7802a;
+      }
+    }
+  }
+
+  .image {
+    margin: 40px 0px;
+    text-align: center;
+    .c-circle {
+    }
+
+    img {
+      height: 400px;
+    }
+  }
+
+  .gallery {
+    .c-img {
+      text-align: center;
+      img {
+        width: 124px;
+        border-radius: 50%;
+        border: 1px solid #e3e3e3;
+        background-color: #f3f3f3;
+      }
+    }
+  }
+
+  .stats {
+    
+  }
+}
+
+#chart {
+  width: 650px;
+  margin: 35px auto;
+}
+
+::ng-deep {
+  .p-sidebar-content {
+    overflow-x: hidden;
+  }
+}

@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap");
+
+html {
+  font-family: "Nunito";
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Nunito", "Helvetica Neue", sans-serif;
+  background: rgb(239,244,250);
+  background: linear-gradient(180deg, rgba(239,244,250,1) 0%, rgba(248,248,248,1) 22%);
+}
+.loader {
+  text-align: center;
+}

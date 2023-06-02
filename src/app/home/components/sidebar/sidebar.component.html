@@ -1,0 +1,85 @@
+<div class="app-sidebar">
+  <div class="row details">
+    <div class="row">
+      <h2>{{ pokemon?.name }}</h2>
+      <div class="col-md-6 code">
+        Cod: #{{ pokemon?.id }}
+      </div>  
+      <div class="col-md-6 type">
+        Tipo: 
+        <ng-container *ngFor="let typeList of pokemon?.types"> 
+          <div [ngClass]="[typeList.type.name, 'normal']">
+            {{ typeList.type.name }}
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="row image">
+      <div class="c-circle">
+        <img [src]="pokemon?.sprites?.other?.dream_world?.front_default" />
+      </div>
+    </div>
+
+    <div class="row gallery">
+      <div class="col-md-3 c-img">
+        <img [src]="pokemon?.sprites?.front_default" />
+      </div>
+      <div class="col-md-3 c-img">
+        <img [src]="pokemon?.sprites?.front_shiny" />
+      </div>
+      <div class="col-md-3 c-img">
+        <img [src]="pokemon?.sprites?.back_default" />
+      </div>
+      <div class="col-md-3 c-img">
+        <img [src]="pokemon?.sprites?.back_shiny" />
+      </div>
+    </div>
+
+    <div class="row stats mt-4">
+
+      <h3> Status </h3>
+      <div class="graph-status">
+        <div id="chart">
+          <div *ngIf="!loaded" class="loader">
+            <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>            
+          </div>
+          <apx-chart *ngIf="loaded"
+            [series]="chartOptions.series"
+            [chart]="chartOptions.chart"
+            [xaxis]="chartOptions.xaxis"
+            [dataLabels]="chartOptions.dataLabels"
+            [grid]="chartOptions.grid"
+            [stroke]="chartOptions.stroke"
+            [title]="chartOptions.title"
+          ></apx-chart>
+        </div>
+        
+      </div>
+
+    </div>
+
+    <div class="row info mb-4">
+
+      <h3> Informações </h3>
+      
+      <div class="row status">
+        <div class="col-md-8 desc">
+          Altura:
+        </div>
+        <div class="col-md-4 value">
+          {{ pokemon?.height }}cm
+        </div>
+      </div>
+      <div class="row status">
+        <div class="col-md-8 desc">
+          Peso:
+        </div>
+        <div class="col-md-4 value">
+          {{ (pokemon?.weight) ? getWeight(pokemon?.weight) : '' }}kg
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="item" (click)="onClickCard(pokemon?.id)">
+  <div class="row">
+    <div class="col-md-8 name">
+      {{ pokemon?.name }}
+    </div>
+    <div class="col-md-4 code">
+      #{{ pokemon?.id }}
+    </div>
+  </div>
+  <div class="row image">
+    <img [src]="pokemon?.sprites?.other?.dream_world?.front_default" [alt]="pokemon?.name" />
+  </div>
+  <div class="row status">
+    <div class="col-md-8 desc">
+      Altura:
+    </div>
+    <div class="col-md-4 value">
+      {{ pokemon?.height }}cm
+    </div>
+  </div>
+  <div class="row status">
+    <div class="col-md-8 desc">
+      Peso:
+    </div>
+    <div class="col-md-4 value">
+      {{ (pokemon?.weight) ? getWeight(pokemon?.weight) : '' }}kg
+    </div>
+  </div>
+</div>

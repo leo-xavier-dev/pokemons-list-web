@@ -1,0 +1,32 @@
+<div class="c-header">
+  <h5>
+    Pokédex
+  </h5>
+</div>
+
+<div>
+  <div class="row c-pokedex">
+    <div class="col-md-2 no-padding" *ngFor="let pokemon of pokemonsListPokedex; let i = index">
+      <div class="product-item">
+        <div class="product-item-content">
+          <div>
+            <app-card-pokemon [pokemon]="pokemon" (open)="openSideBar($event)"></app-card-pokemon>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isError" class="erro">
+      <h3 class="mt-2">
+        Nenhum registro encontrado. 
+      </h3>
+      <p>
+        Pesquise o nome completo do pokemon!
+      </p>
+    </div>
+  </div>
+</div>
+
+<p-sidebar [(visible)]="display" position="right" [baseZIndex]="10000">
+  <app-sidebar *ngIf="display" [pokemonId]="pokemonId"></app-sidebar>
+</p-sidebar>

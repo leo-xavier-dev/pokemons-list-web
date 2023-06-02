@@ -1,0 +1,40 @@
+<div (scroll)="onScroll($event)">
+
+  <div class="header">
+  
+    <div class="content">
+      <div class="row">
+        <div class="col-md-6 content-left">
+          <div class="text">
+            <img src="../../../assets/img/Logo-03.png" />
+            <h1> Explore o mundo <br /> dos <span> Pokémons </span></h1>
+  
+            <p class="subtext mt-3 mb-4">
+              Descubra todas as espécies de Pokémons
+            </p>
+            
+            <form [formGroup]="form">
+              <div class="input-search">
+                <input formControlName="search" type="text" />
+                <button> Buscar </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 image">
+          <img src="../../../assets/img/Pokemons-925.png" />
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+  <div class="most-wanted">
+    <app-most-wanted *ngIf="!isResearching"></app-most-wanted>
+  </div>
+  
+  <div class="most-wanted">
+    <app-pokedex [search$]="search$" [openSideBarById]="openSideBarById"></app-pokedex>
+  </div>
+  
+</div>
